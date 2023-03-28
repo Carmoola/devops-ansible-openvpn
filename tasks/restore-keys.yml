@@ -4,7 +4,7 @@
 - name: List keys
   aws_s3:
     bucket: "{{ openvpn_backup_bucket }}"
-    prefix: openvpn/
+    prefix: "{{ openvpn_backup_prefix }}/"
     mode: list
     region: "{{ ansible_ec2_placement_region }}"
   register: openvpn_keys

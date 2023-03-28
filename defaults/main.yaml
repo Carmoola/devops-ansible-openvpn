@@ -14,6 +14,7 @@ openvpn_daemon_user: nobody
 openvpn_daemon_group: nogroup
 
 openvpn_backup_bucket: backup
+openvpn_backup_prefix: openvpn
 
 restore_from_s3_backup: False
 backup_to_s3: False
@@ -23,3 +24,11 @@ openvpn_push_route: []
 openvpn_domain_search: []
 openvpn_dns_servers:
   - "8.8.8.8"
+
+openvpn_status_version: 2
+
+openvpn_apt_gpg_key: https://swupdate.openvpn.net/repos/repo-public.gpg
+
+openvpn_repo_url: http://build.openvpn.net/debian/openvpn/release
+openvpn_version: 2.5
+openvpn_apt_repository: "deb {{ openvpn_repo_url }}/{{ openvpn_version }} {{ ansible_distribution_release }} main"
